@@ -1,3 +1,5 @@
+------- STRING FUNCTIONS ---------
+
 LEN() - RETORNA O TAMANHO DE UMA STRING
 EX:  LEN(COLLUM)
 
@@ -13,6 +15,75 @@ OBS: NO EXEMPLO AICMA, A SUBSTRING() RETORNA:
 
 RIGHT() - EXTRAI UMA CERTA QUANTIDADE DE CARACTERES DO LADO DIREITO DE UMA STRING
 EX:  SELECT RIGHT('Hello, World!', 6) AS RightResult;
+
+UPPER() - COLOCA TODOS OS ELEMENTOS DE UMA STRING EM MAIÚSCULO
+
+LOWER() - COLOCA TODOS OS ELEMENTOS DE UMA STRING EM MINÚSCULO
+
+RTRIM() - RETIRA OS ESPAÇOS EM BRANCO NA DIREITA DE UMA STRING
+
+LTRIM() - RETIRA OS ELEMENTOS EM BRANCO NA ESQUERDA DE UMA STRING
+
+REPLACE() - SUBSTITUI TODOS OS APARECIMENTOS DE UMA SUBSTRING POR OUTRA SUBSTRING DENTRO DE UMA STRING
+EX:   REPLACE(original_string, old_substring, new_substring)
+EX2:  SELECT REPLACE('Hello, World!', 'Hello', 'Hi') AS NewString;
+
+
+
+------- NUMERIC FUNCTIONS ---------
+
+CEILING() -  arredonda um número para cima para o inteiro mais próximo 
+EX:  CEILING(número)
+
+FLOOR() - arredondar um número para baixo para o inteiro mais próximo 
+EX:  FLOOR(número)
+
+ABS() - é usada para retornar o valor absoluto (sem sinal) de um número.
+EX: ABS(número)
+
+---------  DATE AND TIME FUNCTIONS   ----------
+
+GETDATE() - obter a data e a hora atuais do sistema do servidor. 
+
+SYSDATETIME() - retorna um valor do tipo datetime2, que é uma representação mais precisa de data e hora.
+
+YEAR() - retorna o ano
+
+MONTH() -  retorna o mes
+
+DAY() -  retorna o dia
+
+
+------- Conversion Functions -------
+CAST() - é usada para converter um valor de um tipo de dados para outro.
+EX:  CAST( X AS DECIMAL)
+     CAST( X AS INT)
+     CAST( X AS VARCHAR)
+     CAST( X AS DATETIME)
+     CAST( X AS MONEY)
+
+PARSE() - permite a conversão de uma string para um tipo de dado específico no SQL Server. 
+
+COALESCE() - é utilizada para retornar o primeiro valor não nulo entre seus argumentos
+EX:  COALESCE(expressao1, expressao2, ..., expressao_n)
+EX2: SELECT COALESCE(coluna1, coluna2, 'ValorPadrao') AS Resultado
+
+GROUPING SETS() -  permitir a agregação de dados em vários conjuntos de agrupamento diferentes.
+
+EX: SELECT column1, column2, ..., aggregate_function(column)
+FROM table
+GROUP BY GROUPING SETS ((column1, column2), (column1), ());
+
+ROLLUP() - é usada para realizar agregações em vários níveis hierárquicos, gerando totais e subtotais. 
+
+EX:  SELECT column1, column2, ..., aggregate_function(column)
+FROM table
+GROUP BY column1, column2, ..., WITH ROLLUP;
+
+
+
+      
+
 
 
 
