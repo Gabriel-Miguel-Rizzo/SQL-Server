@@ -80,6 +80,41 @@ EX:  SELECT column1, column2, ..., aggregate_function(column)
 FROM table
 GROUP BY column1, column2, ..., WITH ROLLUP;
 
+----------   Ranking and Window Functions ----------
+
+ROW_NUMBER()        - Mostra o número de tuplas 
+RANK()              - Rankeia os dados
+DENSE_RANK()
+NTILE()             - é uma função analítica que divide um conjunto de resultados em um número especificado de grupos (tiles).
+
+EX:  SELECT 
+    EmployeeID,
+    Salary,
+    NTILE(3) OVER (ORDER BY Salary) AS SalaryGroup
+FROM 
+    Employees;
+
+
+LAG()   -
+LEAD()  -
+
+----------  Mathematical Functions ---------
+PI()
+SQRT()
+EXP()
+LOG()
+SIN()
+COS()
+TAN()
+
+----------  Text Search Functions ----------
+CONTAINS()      -  é usada em conjunto com a pesquisa de texto completo para verificar se uma coluna de texto contém um termo de pesquisa específico. (retorna 1 caso sim ou 0 )
+EX: CONTAINS(column_name, 'search_term')
+
+FREETEXT()      - 
+CHARINDEX()
+
+
 
 
       
