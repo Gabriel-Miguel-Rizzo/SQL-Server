@@ -28,6 +28,8 @@ REPLACE() - SUBSTITUI TODOS OS APARECIMENTOS DE UMA SUBSTRING POR OUTRA SUBSTRIN
 EX:   REPLACE(original_string, old_substring, new_substring)
 EX2:  SELECT REPLACE('Hello, World!', 'Hello', 'Hi') AS NewString;
 
+SUBSTRING_INDEX()  - capturar uma substring de uma string onde ela é separada por um caractere específico
+
 
 
 ------- NUMERIC FUNCTIONS ---------
