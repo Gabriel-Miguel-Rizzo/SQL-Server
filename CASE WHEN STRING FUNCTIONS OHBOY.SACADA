@@ -41,6 +41,9 @@ SELECT PATINDEX('%[0-9]%',Columm)                                  --RETORNA O P
 CASE WHEN ISNUMERIC(SUBSTRING(TAB2.GRAMATURA, 6, 1)) = 1 THEN      --Checa se a primeira casa de uma string é numérica ou não.
 
 
+--------------------------------
+
+
 
 
 
