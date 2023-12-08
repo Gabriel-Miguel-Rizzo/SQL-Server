@@ -29,5 +29,17 @@ CASE
 
 END  --SE EXISTIR VÍRGULA NA ÚLTIMA CASA, RETONA TODA A STRING MENOS A ÚLTIMA CASA
 
+--------------------------------
+
+
+SELECT PATINDEX('%[0-9]%',Columm)                                  --RETORNA O PRIMEIRO CARACTER NUMERICO (0-9) DE UMA STRING
+
+
+--------------------------------
+
+CASE WHEN ISNUMERIC(SUBSTRING(TAB2.GRAMATURA, 6, 1)) = 1 THEN      --Checa se a primeira casa de uma string é numérica ou não.
+
+
+
 
 
