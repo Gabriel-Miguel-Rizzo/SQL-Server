@@ -5,6 +5,7 @@ PATINDEX()
 LEN()
 REPLACE()
 SUBSTRING()
+REVERSE()
 
 ------------------------------
 CASE
