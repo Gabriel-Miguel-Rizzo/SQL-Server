@@ -8,10 +8,10 @@ SUBSTRING()
 
 ------------------------------
 CASE
-    WHEN  CHARINDEX(',',TAB2.PARTE_ESQUERDA_NEW) = 1
-	THEN RIGHT(TAB2.PARTE_ESQUERDA_NEW,
+    WHEN  CHARINDEX(',',TAB2.PARTE_ESQUERDA_NEW) = 1   --se estiver na primeira casa
+	THEN RIGHT(TAB2.PARTE_ESQUERDA_NEW,            
 	
-	     LEN(TAB2.PARTE_ESQUERDA_NEW) - 1   )
+	     LEN(TAB2.PARTE_ESQUERDA_NEW) - 1   )  --pega todos os caracteres à direita -1
 END   --SE EXISTIR VÍRGULA NA PRIMEIRA CASA, RETONA TODA A STRING MENOS A PRIMEIRA CASA
 -------------------------------
 CASE
