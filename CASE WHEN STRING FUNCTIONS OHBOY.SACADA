@@ -43,6 +43,48 @@ CASE WHEN ISNUMERIC(SUBSTRING(TAB2.GRAMATURA, 6, 1)) = 1 THEN      --Checa se a 
 
 --------------------------------
 
+SPACE()
+STUFF('abcdefgh', 3, 4, '123')
+REPLICATE('abc', 3)
+QUOTENAME('MyColumn')
+SOUNDEX('Hello')
+DIFFERENCE('Hello', 'Hallo')
+PATINDEX('%l%', 'Hello')
+CHAR(65)
+UNICODE('A')
+ASCII('A')
+LEFT('Hello', LEN('Hello') - 1)
+COLLATE Latin1_General_CS_AS
+CONVERT(INT, '123')
+PARSE('2022-01-01' AS DATE USING 'en-US')
+CONCAT_WS(',', 'apple', 'orange', 'banana')
+STRING_AGG(Nome, ', ') FROM Pessoas
+TRIM('   Hello   ')
+PARSENAME('www.example.com', 2)
+RIGHT(LEFT('ABCDE', 4), 2)
+FORMATMESSAGE('O valor é %s.', '42')
+CRYPT_GEN_RANDOM(4)
+REPLACE((SELECT Nome + ',' FROM Pessoas FOR XML PATH('')), ',', '')
+CONCAT('Hello ', NULLIF(@Nome, ''))
+PATINDEX('%bcd%', 'abcdefgh')
+LEN('Hello World') - CHARINDEX(' ', REVERSE('Hello World')) + 1
+STUFF((SELECT ', ' + Nome FROM Pessoas FOR XML PATH('')), 1, 2, '')
+STRING_ESCAPE('This is a <test> string', 'json')
+TRANSLATE('Hello', 'elo', '123')
+DIFFERENCE('Hello', 'Hallo')
+COALESCE(NULL, 'Valor Padrão')
+REVERSE(LEFT(REVERSE('Hello'), 2))
+SUBSTRING('Exemplo', 3, 4)
+REPLACE('ababab', 'ab', 'X')
+CONCAT(@Nome1, ' ', @Nome2)
+IIF(@Quantidade > 1, 'Itens', 'Item')
+UPPER('lowercase')
+LOWER('UPPERCASE')
+FORMAT(GETDATE(), 'dd/MM/yyyy')
+LEFT('Hello World', 5)
+RIGHT('Hello World', LEN('Hello World') - 6)
+
+
 
 
 
