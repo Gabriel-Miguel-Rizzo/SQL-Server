@@ -1,0 +1,5 @@
+1 : Evitar ao máximo o uso de funções em querys do sql server
+
+--ex: uma única função do tipo year() aumentou o tempo de uma query de 2 segundos para 37 segundos.
+
+2: 
