@@ -1,0 +1,25 @@
+-- Criação da tabela temporária
+CREATE TABLE #TempRandom (
+    RandomInteger INT
+);
+
+-- Inicialização da variável
+DECLARE @VAR INT = 0;
+
+BEGIN
+    WHILE @VAR <= 100
+    BEGIN
+        -- Gerar um número aleatório e inseri-lo na tabela temporária
+        INSERT INTO #TempRandom (RandomInteger) 
+        VALUES (CAST(RAND() * 100 AS INT)); --(@VAR);
+
+        -- Incrementar a variável de controle
+        SET @VAR = @VAR + 1;
+    END
+
+    -- Selecionar os valores da tabela temporária
+    SELECT RandomInteger FROM #TempRandom;
+END
+
+-- Opcionalmente, você pode soltar a tabela temporária após o uso
+DROP TABLE #TempRandom;
