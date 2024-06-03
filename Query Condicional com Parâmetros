@@ -1,0 +1,32 @@
+-- Criação da stored procedure
+ALTER PROCEDURE DadosCondicionais
+    @COLECAO VARCHAR(100) = NULL,
+    @LINHA VARCHAR(100) = NULL,
+    @GRIFFE VARCHAR(100) = NULL
+AS
+BEGIN
+    -- Define o início da transação
+    SET NOCOUNT ON;
+
+    BEGIN TRY
+        -- Consulta filtrada usando os parâmetros
+        SELECT *
+        FROM produtos p
+        WHERE (@COLECAO IS NULL OR p.COLECAO = @COLECAO)
+          AND (@LINHA IS NULL OR p.LINHA   = @LINHA)
+          AND (@GRIFFE IS NULL OR p.GRIFFE  = @GRIFFE);
+    END TRY
+    BEGIN CATCH
+        -- Captura e lança o erro em caso de exceção
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        DECLARE @ErrorSeverity INT;
+        DECLARE @ErrorState INT;
+
+        SELECT 
+            @ErrorMessage = ERROR_MESSAGE(),
+            @ErrorSeverity = ERROR_SEVERITY(),
+            @ErrorState = ERROR_STATE();
+
+        RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState);
+    END CATCH;
+END;
