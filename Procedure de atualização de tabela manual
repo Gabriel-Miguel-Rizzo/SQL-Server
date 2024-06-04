@@ -1,0 +1,31 @@
+ALTER PROCEDURE BI_PROCESSO_ATUALIZA_METAS
+
+    @Mes INT,
+    @Ano INT,
+    @Griffe VARCHAR(100),
+    @Meta INT
+
+AS
+
+BEGIN
+BEGIN TRY
+    UPDATE DW_PLANEJAMENTO_META_OTB
+    SET META = @Meta
+    WHERE MES = @Mes
+    AND ANO =   @Ano
+    AND GRIFFE = @Griffe;
+END TRY
+ BEGIN CATCH
+        -- Captura e lança o erro em caso de exceção
+        DECLARE @ErrorMessage NVARCHAR(4000);
+        DECLARE @ErrorSeverity INT;
+        DECLARE @ErrorState INT;
+
+        SELECT 
+            @ErrorMessage = ERROR_MESSAGE(),
+            @ErrorSeverity = ERROR_SEVERITY(),
+            @ErrorState = ERROR_STATE();
+
+        RAISERROR (@ErrorMessage, @ErrorSeverity, @ErrorState);
+    END CATCH;
+	END;
