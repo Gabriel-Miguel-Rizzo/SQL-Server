@@ -1,0 +1,24 @@
+
+BEGIN
+
+DECLARE @i INT = 1;
+
+   CREATE TABLE #Temp (
+        Valor INT
+    );
+
+WHILE @i < 100
+BEGIN
+    --PRINT 'Valor de i: ' + CAST(@i AS VARCHAR(10));
+
+	INSERT INTO #Temp
+	VALUES (@i + (2 * @i));
+
+SET @i = @i + 1;
+END;
+
+Select *
+from #Temp;
+
+END;
+
